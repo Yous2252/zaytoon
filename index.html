@@ -49,6 +49,9 @@
       color: #FEFAE0;
     }
 
+   /* Opening Hours image default (desktop) */
+
+
     #who-we-are h4 {
   color: #A4B465;
   margin-bottom: 0.5rem;
@@ -161,6 +164,20 @@
   color: #FEFAE0;
   transform: scale(1.05);
 }
+
+/* Social Icons Styling */
+.social-icons a {
+  color: #FFCF50;
+  font-size: 2.5rem; /* make icons larger */
+  margin: 0 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FEFAE0; /* lighter on hover */
+  transform: scale(1.2); /* pop effect */
+}
+
 
 /* Sticky Buttons Container */
 .sticky-buttons {
@@ -318,7 +335,8 @@
 
 <!-- Section: Hero -->
 <section id="hero" class="d-flex align-items-center" style="background: url('images/Hero-place\ holder.jpg') no-repeat center center/cover; height: 50vh;">
-    <div class="container text-center text-light">
+  <!-- Opening Hours Image -->
+  <div class="container text-center text-light">
       <img src="./images/Zaytoon kabob grill.PNG" alt="Zaytoon Logo" width="500" class="d-inline-block align-text-middle reveal">
       <p class="lead" style="color: #FEFAE0;">Local Halal Goodness Served Fresh Daily</p>
       <a href="#menu" class="btn btn-lg mt-3 reveal" style="background-color: #A4B465; color: #FEFAE0;">View Menu</a>
@@ -499,16 +517,16 @@
       <p class="mb-4">We’d love to hear from you. Whether it’s a question, feedback, or catering inquiry, just reach out!</p>
   
       <p><strong>Phone:</strong> <a href="tel:+14847060370" class="contact-link">(484) 706-0370</a></p>
-      <p><strong>Email:</strong> <a href="mailto:info@zaytoon.com" class="contact-link">info@zaytoon.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:grillzaytoon@gmail.com" class="contact-link">grillzaytoon@gmail.com</a></p>
       
       <p><strong>Address:</strong> 760 Woodland Rd, Wyomissing, PA 19610</p>
   
       <!-- Social Media Links -->
-      <div class="mt-4">
-        <a href="#" class="me-3" style="color: #FFCF50;"><i class="fab fa-facebook fa-lg"></i></a>
-        <a href="https://www.instagram.com/zaytoonkabobgrill/" class="me-3" style="color: #FFCF50;"><i class="fab fa-instagram fa-lg"></i></a>
-        <a href="#" style="color: #FFCF50;"><i class="fab fa-twitter fa-lg"></i></a>
+      <div class="social-icons mt-4 text-center">
+        <a href="https://www.tiktok.com/@zaytoonkabobgrill" class="me-3"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/zaytoonkabobgrill/" class="me-3"><i class="fab fa-instagram"></i></a>
       </div>
+      
   
       <!-- Footer Text -->
       <div class="mt-4">
