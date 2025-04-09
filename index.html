@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaytoon | Local Halal Spot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .navbar-custom {
+      background-color: #282e1d;
+      border-bottom: 2px solid #A4B465;
+    }
+    .nav-link {
+      color: #FEFAE0 !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #A4B465 !important;
+    }
+
+ 
+    .navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23A4B465' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-toggler {
+  border: 2px solid #A4B465; /* custom color */
+  border-radius: 6px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(164, 180, 101, 0.5); /* glow on focus */
+}
+
+
+
+    #hero {
+      background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+      height: 100vh;
+      color: #FEFAE0;
+    }
+    #hero h1 {
+      color: #FFCF50;
+    }
+    #hero .btn {
+      background-color: #A4B465;
+      color: #FEFAE0;
+    }
+
+    #who-we-are h4 {
+  color: #A4B465;
+  margin-bottom: 0.5rem;
+}
+
+#who-we-are p {
+  font-size: 1.05rem;
+  color: #626F47;
+}
+
+#who-we-are img {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+
+    #menu img {
+  border: 4px solid #A4B465; /* gives it a frame that matches your palette */
+  transition: transform 0.3s ease;
+}
+
+#menu img:hover {
+  transform: scale(1.1); /* subtle zoom on hover */
+}
+
+
+#favorites img:hover {
+  transform: scale(1.05); /* subtle zoom on hover */
+  transition: transform 0.3s ease;
+}
+
+#favorites img {
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+#favorites h2 {
+  color: #626F47;
+}
+
+#favorites h5 {
+  color: #A4B465;
+  margin-bottom: 0.5rem;
+}
+
+#favorites img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#favorites .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mission {
+  background-color: #fff;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+#mission h2 {
+  color: #626F47;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+#mission p {
+  color: #626F47;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+#contact a i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+#contact a:hover i {
+  transform: scale(1.2);
+  color: #FEFAE0; /* optional hover color change */
+}
+
+
+#contact a[href^="tel"],
+#contact a[href^="mailto"] {
+  color: #FFCF50;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#contact a[href^="tel"]:hover,
+#contact a[href^="mailto"]:hover {
+  color: #FEFAE0;
+  transform: scale(1.05);
+}
+
+/* Sticky Buttons Container */
+.sticky-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+/* Button Styles */
+.sticky-buttons .btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 30px;
+  color: #FEFAE0;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-order {
+  background-color: #A4B465;
+}
+
+.btn-call {
+  background-color: #FFCF50;
+  color: #626F47;
+}
+
+/* Hover Effect */
+.sticky-buttons .btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  text-decoration: none;
+  background-color: #282e1d;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#hero h1, #hero p {
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+#hero h1 {
+  animation-delay: 0.2s;
+}
+#hero p {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hero .btn:hover {
+  box-shadow: 0 0 15px #FFCF50;
+}
+
+.section-divider {
+  background: linear-gradient(to right, #A4B465 0%, #FFCF50 100%);
+  height: 6px;
+  width: 100px;
+  margin: 2rem auto;
+  border-radius: 5px;
+}
+
+.btn {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* External Carousel Indicators */
+.carousel-indicators {
+  position: relative;
+  margin-top: 20px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #A4B465;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #626F47;
+  opacity: 1;
+}
+
+
+
+
+
+
+  </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+<!-- Section: Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="./images/logo.PNG" alt="Zaytoon Logo" width="150" height="50" class="d-inline-block align-text-middle">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#who-we-are">Who We Are</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#favorites">Top Picks</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mission">Our Mission</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Section: Hero -->
+<section id="hero" class="d-flex align-items-center" style="background: url('images/Hero-place\ holder.jpg') no-repeat center center/cover; height: 50vh;">
+    <div class="container text-center text-light">
+      <img src="./images/Zaytoon kabob grill.PNG" alt="Zaytoon Logo" width="500" class="d-inline-block align-text-middle reveal">
+      <p class="lead" style="color: #FEFAE0;">Local Halal Goodness Served Fresh Daily</p>
+      <a href="#menu" class="btn btn-lg mt-3 reveal" style="background-color: #A4B465; color: #FEFAE0;">View Menu</a>
+    </div>
+  </section>
+
+
+  <!-- Section: Who We Are -->
+<!-- Section: Who We Are -->
+<section id="who-we-are" class="py-5">
+  <div class="container">
+    <h2 class="mb-5 text-center" style="color: #626F47;">WHO WE ARE</h2>
+
+    <div class="row gy-4">
+      <!-- Block 1 -->
+      <div class="col-lg-4 col-md-4 col-12">
+        <div class="p-3 h-100 rounded shadow-sm text-center" style="background-color: #FEFAE0;">
+          <img src="./images/Family owned place holder.jpg" class="img-fluid rounded mb-3" alt="Family Owned">
+          <h4 style="color: #626F47;">Family-Owned & Operated</h4>
+          <p style="color: #626F47;">Zaytoon is a local, family-run halal restaurant where tradition and hospitality meet. Every plate tells a story.</p>
+        </div>
+      </div>
+
+      <!-- Block 2 -->
+      <div class="col-lg-4 col-md-4 col-12">
+        <div class="p-3 h-100 rounded shadow-sm text-center" style="background-color: #FEFAE0;">
+          <img src="./images/Halal food place holder.jpg" class="img-fluid rounded mb-3" alt="Authentic Flavors">
+          <h4 style="color: #626F47;">Authentic Flavors</h4>
+          <p style="color: #626F47;">Rich spices and time-honored recipes. We’re serving Mediterranean dishes bursting with flavor.</p>
+        </div>
+      </div>
+
+      <!-- Block 3 -->
+      <div class="col-lg-4 col-md-4 col-12 mx-auto">
+        <div class="p-3 h-100 rounded shadow-sm text-center" style="background-color: #FEFAE0;">
+          <img src="./images/Gathering.jpg" class="img-fluid rounded mb-3" alt="Community Vibes">
+          <h4 style="color: #626F47;">A Place to Gather</h4>
+          <p style="color: #626F47;">Zaytoon is more than food—it’s where our community connects and feels at home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Section: Menu -->
+<section id="menu" class="py-5" style="background-color: #fff;">
+    <div class="container">
+      <h2 class="mb-5 text-center" style="color: #626F47;">OUR MENU</h2>
+  
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="./images/menu 1.jpg" alt="Menu Page 1" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <img src="./images/menu 2.jpg" alt="Menu Page 2" class="img-fluid rounded shadow">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+
+  <!-- Section: Customer Favorites / Top Picks -->
+<section id="favorites" class="py-5" style="background-color: #FEFAE0;">
+    <div class="container">
+      <h2 class="mb-5 text-center" style="color: #626F47;">TOP PICKS</h2>
+      
+      <div class="row text-center">
+  
+        <!-- Appetizer -->
+        <div class="col-md-4 mb-5">
+          <h5 style="color: #A4B465;">Falafel Bites</h5>
+          <img src="./images/falalel.jpg" alt="Falafel Bites">
+        </div>
+  
+        <!-- Salad -->
+        <div class="col-md-4 mb-5">
+          <h5 style="color: #A4B465;">Tabbouleh Salad</h5>
+          <img src="./images/Tabbouleh Salad.jpg"  alt="Tabbouleh Salad">
+        </div>
+  
+        <!-- Gyros -->
+        <div class="col-md-4 mb-5">
+          <h5 style="color: #A4B465;">Beef Gyro</h5>
+          <img src="./images/Beef Gyro.jpg"  alt="Beef Gyro">
+        </div>
+  
+        <!-- Kabobs -->
+        <div class="col-md-4 mb-5">
+          <h5 style="color: #A4B465;">Chicken Kabob</h5>
+          <img src="./images/Chicken Kabob.jpg" alt="Chicken Kabob">
+        </div>
+  
+        <!-- Platters -->
+        <div class="col-md-4 mb-5">
+          <h5 style="color: #A4B465;">Mixed Grill Platter</h5>
+          <img src="./images/Mixed Grill Platter.jpg" alt="Mixed Grill Platter">
+        </div>
+  
+        <!-- Dessert -->
+        <div class="col-md-4 mb-5">
+          <h5 style="color: #A4B465;">Baklava</h5>
+          <img src="./images/Baklava.jpg" class=" alt="Baklava">
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section: Our Mission -->
+<section id="mission" class="py-5 text-center" style="background-color: #fff;">
+    <div class="container">
+      <h2 class="mb-4" style="color: #626F47;">OUR MISSION</h2>
+      <p class="lead mx-auto" style="max-width: 800px; color: #626F47;">
+        At Zaytoon, we believe food is a bridge between cultures and community. Our mission is to serve authentic, high-quality halal meals that bring people together—one plate at a time. We take pride in using fresh ingredients, traditional recipes, and a whole lot of heart.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: Testimonials -->
+<section id="testimonials" class="py-5" style="background-color: #FEFAE0;">
+  <div class="container">
+    <h2 class="text-center mb-4" style="color: #626F47;">WHAT OUR CUSTOMERS SAY</h2>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Review 1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Review 2"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Review 3"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Review 4"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="4" aria-label="Review 5"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <img src="./images/Screenshot 1.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 1" style="max-height: 300px; width: auto;">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/Screenshot 2.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 2" style="max-height: 300px; width: auto;">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/Screenshot 3.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 3" style="max-height: 300px; width: auto;">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/Screenshot 4.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 4" style="max-height: 300px; width: auto;">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/Screenshot 5.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 5" style="max-height: 300px; width: auto;">
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Section: Contact / Footer -->
+<footer id="contact" class="py-5" style="background-color: #626F47; color: #FEFAE0;">
+    <div class="container text-center">
+  
+      <h2 class="mb-4">Get in Touch</h2>
+      <p class="mb-4">We’d love to hear from you. Whether it’s a question, feedback, or catering inquiry, just reach out!</p>
+  
+      <p><strong>Phone:</strong> <a href="tel:+14847060370" class="contact-link">(484) 706-0370</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@zaytoon.com" class="contact-link">info@zaytoon.com</a></p>
+      
+      <p><strong>Address:</strong> 760 Woodland Rd, Wyomissing, PA 19610</p>
+  
+      <!-- Social Media Links -->
+      <div class="mt-4">
+        <a href="#" class="me-3" style="color: #FFCF50;"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="https://www.instagram.com/zaytoonkabobgrill/" class="me-3" style="color: #FFCF50;"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" style="color: #FFCF50;"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+  
+      <!-- Footer Text -->
+      <div class="mt-4">
+        <small>&copy; 2025 Zaytoon. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Action Buttons -->
+<div class="sticky-buttons">
+    <a href="#menu" class="btn btn-order">Order Now</a>
+    <a href="tel:+14847060370" class="btn btn-call">Call Us</a>
+  </div>
+  
+  
+  
+  
+  
+  
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach(el => {
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 100); // delay for effect
+    });
+  });
+</script>
+  
+</body>
+</html>
