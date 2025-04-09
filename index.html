@@ -279,6 +279,9 @@
   opacity: 1;
 }
 
+.sticky-buttons a:focus {
+  outline: none;
+}
 
 
 
@@ -537,6 +540,12 @@
       }, 100); // delay for effect
     });
   });
+</script>
+
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 </script>
   
 </body>
