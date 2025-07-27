@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,12 +35,35 @@
   box-shadow: 0 0 0 0.2rem rgba(164, 180, 101, 0.5); /* glow on focus */
 }
 
+#hero {
+  position: relative;
+  min-height: 60vh;
+  padding: 60px 15px;
+  overflow: hidden;
+}
+
+#hero .bg-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('./images/drive-download-20250714T145445Z-1-001/_DSC3787.jpg') no-repeat center center/cover;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
 
 
     #hero {
-      background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+      background: url('./images/drive-download-20250714T145445Z-1-001/_DSC3787.jpg') no-repeat center center/cover;
       height: 100vh;
       color: #FEFAE0;
+      
     }
     #hero h1 {
       color: #FFCF50;
@@ -48,6 +72,8 @@
       background-color: #A4B465;
       color: #FEFAE0;
     }
+
+
 
    /* Opening Hours image default (desktop) */
 
@@ -334,9 +360,10 @@
 </nav>
 
 <!-- Section: Hero -->
-<section id="hero" class="d-flex align-items-center justify-content-center text-center text-light" style="background: url('images/Hero-place%20holder.jpg') no-repeat center center/cover; min-height: 60vh; padding: 60px 15px;">
+<section id="hero" class="d-flex align-items-center justify-content-center text-center text-light" style="background: url(./images/drive-download-20250714T145445Z-1-001/_DSC3787.jpg) no-repeat center center/cover; min-height: 60vh; padding: 60px 15px;">
+  <div class="bg-blur"></div>
   <div class="container">
-    <img src="./images/Zaytoon kabob grill.PNG" alt="Zaytoon Logo" class="img-fluid mb-3 reveal" style="width: 600px; height: auto;">
+    <img src="./images/Zaytoon kabob grill.PNG" alt="Zaytoon Logo" class="img-fluid mb-3 reveal glow-green" style="width: 600px; height: auto;">
     <p class="lead" style="color: #FEFAE0;">Local Halal Goodness Served Fresh Daily</p>
     <a href="#menu" class="btn btn-lg mt-3 reveal" style="background-color: #A4B465; color: #FEFAE0;">View Menu</a>
   </div>
@@ -352,7 +379,7 @@
       <!-- Block 1 -->
       <div class="col-lg-4 col-md-4 col-12">
         <div class="p-3 h-100 rounded shadow-sm text-center" style="background-color: #FEFAE0;">
-          <img src="./images/Family owned place holder.jpg" class="img-fluid rounded mb-3" alt="Family Owned">
+          <img src="./images/zay.jpg" class="img-fluid rounded mb-3" alt="Family Owned">
           <h4 style="color: #626F47;">Family-Owned & Operated</h4>
           <p style="color: #626F47;">Zaytoon is a local, family-run halal restaurant where tradition and hospitality meet. Every plate tells a story.</p>
         </div>
@@ -361,7 +388,7 @@
       <!-- Block 2 -->
       <div class="col-lg-4 col-md-4 col-12">
         <div class="p-3 h-100 rounded shadow-sm text-center" style="background-color: #FEFAE0;">
-          <img src="./images/Halal food place holder.jpg" class="img-fluid rounded mb-3" alt="Authentic Flavors">
+          <img src="./images/drive-download-20250714T145445Z-1-001/_DSC3787 - Copy.jpg" class="img-fluid rounded mb-3" alt="Authentic Flavors">
           <h4 style="color: #626F47;">Authentic Flavors</h4>
           <p style="color: #626F47;">Rich spices and time-honored recipes. We’re serving Mediterranean dishes bursting with flavor.</p>
         </div>
@@ -370,7 +397,7 @@
       <!-- Block 3 -->
       <div class="col-lg-4 col-md-4 col-12 mx-auto">
         <div class="p-3 h-100 rounded shadow-sm text-center" style="background-color: #FEFAE0;">
-          <img src="./images/Gathering.jpg" class="img-fluid rounded mb-3" alt="Community Vibes">
+          <img src="./images/423424234.jpg" class="img-fluid rounded mb-3" alt="Community Vibes">
           <h4 style="color: #626F47;">A Place to Gather</h4>
           <p style="color: #626F47;">Zaytoon is more than food—it’s where our community connects and feels at home.</p>
         </div>
@@ -408,38 +435,38 @@
   
         <!-- Appetizer -->
         <div class="col-md-4 mb-5">
-          <h5 style="color: #A4B465;">Falafel Bites</h5>
-          <img src="./images/falalel.jpg" alt="Falafel Bites">
+          <h5 style="color: #A4B465;">Kabob</h5>
+          <img src="./images/drive-download-20250714T145445Z-1-001/Kabob.jpg" alt="Kabob">
         </div>
   
         <!-- Salad -->
         <div class="col-md-4 mb-5">
-          <h5 style="color: #A4B465;">Tabbouleh Salad</h5>
-          <img src="./images/Tabbouleh Salad.jpg"  alt="Tabbouleh Salad">
+          <h5 style="color: #A4B465;">Chicken Over Rice</h5>
+          <img src="./images/drive-download-20250714T145445Z-1-001/Chicken Over Rice.jpg"  alt="Chicken Over Rice">
         </div>
   
         <!-- Gyros -->
         <div class="col-md-4 mb-5">
-          <h5 style="color: #A4B465;">Beef Gyro</h5>
-          <img src="./images/Beef Gyro.jpg"  alt="Beef Gyro">
+          <h5 style="color: #A4B465;">Dumblings</h5>
+          <img src="./images/drive-download-20250714T145445Z-1-001/Dumblings.jpg"  alt="Dumblings">
         </div>
   
         <!-- Kabobs -->
         <div class="col-md-4 mb-5">
-          <h5 style="color: #A4B465;">Chicken Kabob</h5>
-          <img src="./images/Chicken Kabob.jpg" alt="Chicken Kabob">
+          <h5 style="color: #A4B465;">Bolani</h5>
+          <img src="./images/drive-download-20250714T145445Z-1-001/Bolani.jpg" alt="Bolani">
         </div>
   
         <!-- Platters -->
         <div class="col-md-4 mb-5">
-          <h5 style="color: #A4B465;">Mixed Grill Platter</h5>
-          <img src="./images/Mixed Grill Platter.jpg" alt="Mixed Grill Platter">
+          <h5 style="color: #A4B465;">Chicken & Lamb Over Rice</h5>
+          <img src="./images/drive-download-20250714T145445Z-1-001/Chicken Lamb Over Rice.jpg" alt="Chicken & Lamb Over Rice">
         </div>
   
         <!-- Dessert -->
         <div class="col-md-4 mb-5">
-          <h5 style="color: #A4B465;">Baklava</h5>
-          <img src="./images/Baklava.jpg" class=" alt="Baklava">
+          <h5 style="color: #A4B465;">Chai Tea</h5>
+          <img src="./images/drive-download-20250714T145445Z-1-001/Chai Tea.jpg" class=" alt="Chai Tea">
         </div>
   
       </div>
@@ -452,7 +479,7 @@
     <div class="container">
       <h2 class="mb-4" style="color: #626F47;">OUR MISSION</h2>
       <p class="lead mx-auto" style="max-width: 800px; color: #626F47;">
-        At Zaytoon, we believe food is a bridge between cultures and community. Our mission is to serve authentic, high-quality halal meals that bring people together—one plate at a time. We take pride in using fresh ingredients, traditional recipes, and a whole lot of heart.
+        At Zaytoon, we believe food is a bridge between cultures and community. Our mission is to serve high-quality Afgan meals that bring people together—one plate at a time. We take pride in using fresh ingredients, traditional recipes, and a whole lot of heart.
       </p>
     </div>
   </section>
@@ -475,23 +502,39 @@
       </div>
 
       <!-- Slides -->
-      <div class="carousel-inner text-center">
-        <div class="carousel-item active">
-          <img src="./images/Screenshot 1.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 1" style="max-height: 300px; width: auto;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Screenshot 2.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 2" style="max-height: 300px; width: auto;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Screenshot 3.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 3" style="max-height: 300px; width: auto;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Screenshot 4.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 4" style="max-height: 300px; width: auto;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Screenshot 5.png" class="d-block mx-auto rounded shadow-sm" alt="Testimonial 5" style="max-height: 300px; width: auto;">
-        </div>
-      </div>
+<div class="carousel-inner text-center">
+  <div class="carousel-item active">
+    <p class="d-block mx-auto rounded shadow-sm p-4" style="max-width: 600px;">
+      “Food's always good. The staff is always kind. Top lunch spot”  
+      <br><small>– Andy Bortz.</small>
+    </p>
+  </div>
+  <div class="carousel-item">
+    <p class="d-block mx-auto rounded shadow-sm p-4" style="max-width: 600px;">
+      “Fantastic kabob and chai, great place, main reason I stopped in the area”  
+      <br><small>– Nick Miller.</small>
+    </p>
+  </div>
+  <div class="carousel-item">
+    <p class="d-block mx-auto rounded shadow-sm p-4" style="max-width: 600px;">
+      “Food is freaking amazing!! I got a lamb gyro and it was soooo delicious!!”  
+      <br><small>– Janaina Massola Gonzales Lopes.</small>
+    </p>
+  </div>
+  <div class="carousel-item">
+    <p class="d-block mx-auto rounded shadow-sm p-4" style="max-width: 600px;">
+      “Location of the restaurant is pretty good it’s right behind best buy lots of parking spots but the best thing about this place is the food there is none like it!”  
+      <br><small>– John Doe.</small>
+    </p>
+  </div>
+  <div class="carousel-item">
+    <p class="d-block mx-auto rounded shadow-sm p-4" style="max-width: 600px;">
+      “Yummy food. Got the lamb and chicken rice meal 100/10. The pink chai is sooo good I love it. The atmosphere is very chill and the staff is very friendly. 😊 Also the food came out really quick!”  
+      <br><small>– Caitlynn Crawford.</small>
+    </p>
+  </div>
+</div>
+
 
       <!-- Controls -->
       <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
@@ -524,6 +567,9 @@
       <div class="social-icons mt-4 text-center">
         <a href="https://www.tiktok.com/@zaytoonkabobgrill" class="me-3"><i class="fab fa-tiktok"></i></a>
         <a href="https://www.instagram.com/zaytoonkabobgrill/" class="me-3"><i class="fab fa-instagram"></i></a>
+       <a href="https://www.facebook.com/profile.php?id=61578758635022" class="me-3">
+    <i class="fab fa-facebook-f"></i>
+  </a>
       </div>
       
   
@@ -536,7 +582,7 @@
 
   <!-- Sticky Action Buttons -->
 <div class="sticky-buttons">
-    <a href="#menu" class="btn btn-order">Order Now</a>
+    
     <a href="tel:+14847060370" class="btn btn-call">Call Us</a>
   </div>
   
@@ -557,13 +603,19 @@
       }, 100); // delay for effect
     });
   });
-</script>
 
-<script>
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 </script>
+
+<div id="root"></div>
+    <script type="module" src="./ZaytoonWebsite.jsx"></script>
+
+
+</body>
+</html>
+
   
 </body>
 </html>
